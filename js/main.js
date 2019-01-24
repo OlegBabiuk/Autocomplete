@@ -3,9 +3,9 @@ let container = document.querySelector('.container');
 const objList = {
   name: 'New fruit',
   allItems: ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry']
-}
+};
 
-createList(container, objList)
+createList(container, objList);
 
 function createList(container, optionLists) {
   let allItems = optionLists.allItems;
@@ -128,7 +128,9 @@ function createList(container, optionLists) {
       }
     }
 
-    currentSelecedItem.classList.add('keyboardSelect');
+    if (currentSelecedItem) {
+      currentSelecedItem.classList.add('keyboardSelect');
+    }
   }
 
   function filterAllItems() {
