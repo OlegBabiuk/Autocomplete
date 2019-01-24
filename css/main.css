@@ -1,0 +1,128 @@
+body,
+div,
+ul,
+li,
+label,
+input {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+li {
+  display: block;
+}
+.container {
+  padding-top: 250px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 30px 30px 50px;
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+}
+.wrapper label {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  display: inline;
+  position: absolute;
+  z-index: 2;
+  top: 35px;
+  transition: all 0.4s 0.133s cubic-bezier(0.25,0.8,0.25,1);
+  cursor: pointer;
+}
+.wrapper.active label {
+  color: rgb(63, 81, 181)
+}
+label.shift {
+  top: 18px;
+  font-size: 12px;
+}
+.itemsRow {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #919191;
+  padding: 5px 0;
+  position: relative;
+}
+.itemsRow::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -1px;
+  background-color: rgb(63, 81, 181);
+  transition: all 0.4s 0.133s cubic-bezier(0.25,0.8,0.25,1);
+  transform-origin: center center;
+  transform: scaleX(0);
+}
+.wrapper.active .itemsRow::after {
+  transform: scaleX(1);
+}
+.selectedItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+.selectedItems li {
+  background-color: #e0e0e0;
+  color: black;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.selectedItems li:hover {
+  background-color: #c5c5c5;
+}
+.selectedItems li span {
+  margin-right: 7px;
+}
+.selectedItems li i {
+  color: #939393;
+}
+.selectedItems li i:hover {
+  color: #696969;
+}
+.autoInput {
+  flex: 1 0 150px;
+  background-color: transparent;
+  border: none;
+}
+.optionsItems {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  --optionListWidth: 90%;
+  --optionListTop: 90px;
+  width: var(--optionListWidth);
+  top: var(--optionListTop);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  align-items: flex-start;
+  color: rgba(0, 0, 0, 0.87);
+}
+.optionsItems li {
+  padding: 15px;
+  width: 100%;
+}
+.optionsItems li:hover {
+  background-color: #e7e7e7;
+}
+li.keyboardSelect {
+  background-color: #c5c5c5;
+}
+.hidden {
+  display: none;
+}
